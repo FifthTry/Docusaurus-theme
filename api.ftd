@@ -1,0 +1,72 @@
+-- import: config
+-- import: lib
+
+-- lib.doc-second:
+
+-- lib.h1: API DOC
+
+⚡️ Docusaurus will help you ship a beautiful documentation site in no time.
+
+💸 Building a custom tech stack is expensive. Instead, focus on your content and just write Markdown files.
+
+💥 Ready for more? Use advanced features like versioning, i18n, search and theme customizations.
+
+💅 Check the best Docusaurus sites for inspiration and read some testimonials.
+
+🧐 Docusaurus is a static-site generator. It builds a single-page application with fast client-side navigation,
+ leveraging the full power of React to make your site interactive. It provides out-of-the-box documentation
+ features but can be used to create any kind of site (personal website, product, blog, marketing landing pages, etc).
+
+-- lib.h2: Fast Track ⏱️
+
+Understand Docusaurus in 5 minutes by playing!
+
+Create a new Docusaurus site and follow the very short embedded tutorial.
+
+Install Node.js and create a new Docusaurus site:
+
+-- lib.h2: Disclaimer
+
+Docusaurus v2 is beta but already quite stable and widely used.
+
+We highly encourage you to use Docusaurus v2 over Docusaurus v1, as Docusaurus v1 will be deprecated soon.
+
+A lot of users are already using Docusaurus v2 (trends).
+
+**Use Docusaurus v2 if:**
+
+- ✅ You want a modern Jamstack documentation site
+- ✅ You want a single-page application (SPA) with client-side routing
+- ✅ You want the full power of React and MDX
+- ✅ You do not need support for IE11
+
+
+-- lib.h3: Design principles
+
+Docusaurus v2 is beta but already quite stable and widely used.
+
+We highly encourage you to use Docusaurus v2 over Docusaurus v1, as Docusaurus v1 will be deprecated soon.
+
+A lot of users are already using Docusaurus v2 (trends).
+
+**Use Docusaurus v2 if:**
+
+- ✅ You want a modern Jamstack documentation site
+- ✅ You want a single-page application (SPA) with client-side routing
+- ✅ You want the full power of React and MDX
+- ✅ You do not need support for IE11
+
+-- lib.h4: Comparison with other tools
+
+Docusaurus v2 is beta but already quite stable and widely used.
+
+We highly encourage you to use Docusaurus v2 over Docusaurus v1, as Docusaurus v1 will be deprecated soon.
+
+A lot of users are already using Docusaurus v2 (trends).
+
+**Use Docusaurus v2 if:**
+
+- ✅ You want a modern Jamstack documentation site
+- ✅ You want a single-page application (SPA) with client-side routing
+- ✅ You want the full power of React and MDX
+- ✅ You do not need support for IE11

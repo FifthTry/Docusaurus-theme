@@ -1,5 +1,3 @@
--- import: config
--- import: data
 
 -- boolean dark-mode: true
 -- boolean mobile: false
@@ -12,6 +10,132 @@
 -- string neutral-600: #3E4155
 -- string neutral-700: #1C1C24
 -- string neutral-800: #000
+
+-- integer content-padding: 150
+-- integer max-width: 1000
+-- string github: NA
+-- string site-name: NA
+-- string site-icon: NA
+
+-- record toc-item:
+caption title:
+string url:
+toc-item list children:
+
+-- toc-item list header-toc:
+-- toc-item list toc-first:
+-- toc-item list toc-second:
+-- toc-item list toc-third:
+
+
+
+-- record action-item:
+string title:
+string url:
+string background-color:
+string text-color:
+
+-- action-item list hero-action:
+
+
+-- ftd.column page:
+width: fill
+background-color: $neutral
+open: content-container
+
+--- header:
+
+--- ftd.column:
+id:  content-container
+
+--- container: ftd.main
+
+--- footer:
+
+
+-- ftd.column doc-first:
+width: fill
+open: main-container
+background-color: $neutral
+
+--- header:
+
+--- ftd.row:
+width: fill
+id: main-row
+
+--- render-toc:
+toc-obj: $toc-first
+
+--- container: main-row
+
+--- ftd.column:
+id: main-container
+max-width: 800
+align: top
+padding-horizontal: 20
+padding-vertical: 20
+
+--- container: ftd.main
+
+--- footer:
+
+
+-- ftd.column doc-second:
+width: fill
+open: main-container
+background-color: $neutral
+
+--- header:
+
+--- ftd.row:
+width: fill
+id: main-row
+
+--- render-toc:
+toc-obj: $toc-second
+
+--- container: main-row
+
+--- ftd.column:
+id: main-container
+max-width: 800
+align: top
+padding-horizontal: 20
+padding-vertical: 20
+
+--- container: ftd.main
+
+--- footer:
+
+
+-- ftd.column doc-third:
+width: fill
+open: main-container
+background-color: $neutral
+
+--- header:
+
+--- ftd.row:
+width: fill
+id: main-row
+
+--- render-toc:
+toc-obj: $toc-third
+
+--- container: main-row
+
+--- ftd.column:
+id: main-container
+max-width: 800
+align: top
+padding-horizontal: 20
+padding-vertical: 20
+
+--- container: ftd.main
+
+--- footer:
+
 
 
 -- ftd.text site-link:
@@ -90,14 +214,14 @@ src: https://res.cloudinary.com/dphj6havg/image/upload/v1640848703/docusaurus_ke
 height: 32
 width: auto
 
---- site-link: $config.site-name
+--- site-link: $site-name
 link: /
 
 --- container: left-side
 
 
 --- header-link: $obj.title
-$loop$: $config.header-toc as $obj
+$loop$: $header-toc as $obj
 link: $obj.url
 
 
@@ -112,7 +236,7 @@ width: auto
 src: static/images/github-dark.svg
 width: 20
 min-width: 20
-link: $data.github
+link: $github
 
 --- ftd.image:
 src: static/images/dark-mode.svg
@@ -126,17 +250,353 @@ height: 200
 background-color: $neutral-300
 
 
--- ftd.column page:
+
+
+
+-- ftd.column hero:
+caption title:
+string image:
+action-item list hero-action:
 width: fill
-background-color: $neutral
-open: content-container
+background-color: #2b3136
+padding-horizontal: $content-padding
+padding-vertical: 50
+spacing: 40
 
---- header:
+--- ftd.row:
+width: fill
 
---- ftd.column:
-id:  content-container
+--- ftd.text: $title
+size: 56
+line-height: 80
+style: bold
+color: $neutral
+width: percent 75
+position: center
+font: apple-system
+
+--- ftd.image:
+src: $image
+width: percent 15
+height: auto
+position: right
 
 --- container: ftd.main
 
---- footer:
+--- ftd.row:
+spacing: 40
 
+--- ftd.text:  $obj.title
+$loop$: $hero-action as $obj
+link: $obj.url
+background-color: $obj.background-color
+color: $obj.text-color
+border-radius: 6
+padding-vertical: 15
+padding-horizontal: 40
+font: apple-system
+size: 20
+style: semi-bold
+
+
+-- ftd.text banner:
+caption title:
+text: $title
+size: 24
+style: semi-bold
+padding: 45
+text-align: center
+color: #25c19f
+background-color: #20232a
+width: fill
+font: apple-system
+
+
+
+-- ftd.column toc-instance:
+toc-item toc:
+padding-left: 10
+padding-top: 2
+padding-bottom: 2
+
+--- ftd.text:
+toc-item toc:
+link: $toc.url
+text: $toc.title
+size: 15
+line-height: 22
+min-width: fit-content
+padding-left: 10
+padding-top: 3
+padding-bottom: 3
+font: apple-system
+color: $neutral-700
+
+--- toc-instance:
+$loop$: $toc.children as $obj
+toc: $obj
+
+-- ftd.column render-toc:
+toc-item list toc-obj:
+sticky: true
+top: 0
+height: calc 100vh - 0px
+overflow-y: auto
+width: 300
+align: top-left
+padding-left: 10
+padding-top: 15
+padding-right: 20
+padding-bottom: 40
+border-right: 1
+border-color: #ebedef
+
+--- toc-instance:
+$loop$: $toc-obj as $obj
+toc: $obj
+
+
+
+-- ftd.text markdown:
+body body:
+optional boolean collapsed:
+optional caption title:
+optional boolean two_columns:
+text: $body
+size: 15
+line-height: 24
+color: $neutral-700
+padding-bottom: 8
+font: apple-system
+
+
+
+-- ftd.column h1:
+caption title:
+optional body body:
+width: fill
+region: h1
+padding-bottom: 12
+
+--- ftd.text:
+text: $title
+caption $title:
+region: title
+text: $title
+size: 46
+line-height: 46
+color: $neutral-800
+style: bold
+padding-bottom: 16
+padding-top: 8
+font: apple-system
+
+--- markdown:
+if: $body is not null
+body: $body
+
+-- ftd.column subtitle:
+caption title:
+optional body body:
+width: fill
+region: h1
+padding-bottom: 12
+
+--- ftd.text:
+text: $title
+caption $title:
+region: title
+text: $title
+size: 19
+line-height: 24
+color: $neutral-800
+style: italic
+padding-bottom: 8
+padding-top: 16
+font: apple-system
+
+--- markdown:
+if: $body is not null
+body: $body
+
+
+-- ftd.column h2:
+caption title:
+optional body body:
+width: fill
+region: h2
+padding-bottom: 12
+
+--- ftd.text:
+caption $title:
+text: $title
+region: title
+size: 30
+line-height: 40
+color: $neutral-700
+style: bold
+padding-bottom: 8
+padding-top: 16
+font: apple-system
+
+--- markdown:
+if: $body is not null
+body: $body
+
+
+-- ftd.column h3:
+caption title:
+optional body body:
+width: fill
+region: h3
+padding-bottom: 12
+
+--- ftd.text:
+caption $title:
+text: $title
+region: title
+size: 26
+line-height: 32
+color: $neutral-800
+style: bold
+padding-bottom: 8
+padding-top: 16
+font: apple-system
+
+--- markdown:
+if: $body is not null
+body: $body
+
+
+-- ftd.column h4:
+caption title:
+optional body body:
+width: fill
+region: h4
+padding-bottom: 12
+
+--- ftd.text:
+caption $title:
+text: $title
+region: title
+size: 21
+line-height: 30
+color: $neutral-800
+style: bold
+padding-bottom: 8
+padding-top: 16
+font: apple-system
+
+
+--- markdown:
+if: $body is not null
+body: $body
+
+
+-- ftd.column h5:
+caption title:
+optional body body:
+width: fill
+region: h5
+
+--- ftd.text:
+caption $title:
+text: $title
+region: title
+size: 18
+line-height: 24
+color: $neutral-800
+style: bold
+padding-bottom: 12
+padding-top: 34
+font: apple-system
+
+--- markdown:
+if: $body is not null
+body: $body
+
+
+-- ftd.column code:
+optional caption caption:
+body body:
+string lang:
+optional string $filename:
+optional string $full:
+padding-bottom: 12
+padding-top: 12
+width: fill
+
+--- ftd.text:
+text: $caption
+if: $caption is not null
+color: #DCDCDC
+width: fill
+size: 14
+background-color: #3a404e
+padding-top: 10
+padding-bottom: 10
+padding-left: 20
+padding-right: 20
+border-top-radius: 4
+font: Open sans
+
+--- ftd.code:
+if: $caption is not null
+text: $body
+lang: $lang
+color: #4D4D4D
+width: fill
+size: 17
+line-height: 25
+padding-top: 10
+padding-left: 20
+padding-bottom: 10
+padding-right: 20
+background-color: #2b303b
+border-bottom-radius: 4
+overflow-x: auto
+
+--- ftd.code:
+if: $caption is null
+text: $body
+lang: $lang
+color: #4D4D4D
+width: fill
+size: 17
+line-height: 25
+padding-top: 10
+padding-left: 20
+padding-bottom: 10
+padding-right: 20
+background-color: #2b303b
+border-bottom-radius: 4
+border-top-radius: 4
+overflow-x: auto
+
+
+-- ftd.column feature:
+caption title:
+string image:
+body body:
+width: percent 30
+spacing: 20
+
+--- ftd.image:
+src: $image
+width: percent 80
+position: top
+
+--- ftd.text: $title
+width: percent 80
+size: 22
+font: apple-system
+width: fill
+text-align: center
+
+--- ftd.text:
+text: $body
+width: fill
+size: 15
+font: apple-system
+width: fill
+text-align: center

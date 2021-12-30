@@ -1,12 +1,11 @@
--- import: data
+-- import: lib
 
--- string site-name: Docusaurus
--- string site-icon: https://res.cloudinary.com/dphj6havg/image/upload/v1640848703/docusaurus_keytar_rczbk2.svg
--- data.github: https://github.com/FifthTry/Docusaurus-theme
+-- lib.site-name: Docusaurus
+-- lib.site-icon: https://res.cloudinary.com/dphj6havg/image/upload/v1640848703/docusaurus_keytar_rczbk2.svg
+-- lib.github: https://github.com/FifthTry/Docusaurus-theme
 
--- data.toc-item list header-toc:
 
--- header-toc:
+-- lib.header-toc:
 $processor$: toc
 
 - docs/
@@ -16,4 +15,41 @@ $processor$: toc
 - community/
   Community
 
+-- lib.toc-first:
+$processor$: toc
+
+- introduction/
+  Introduction
+- getting-started/
+  Getting Started
+
+
+-- lib.toc-second:
+$processor$: toc
+
+- cli/
+  CLI
+- client-api/
+  Client API
+
+-- lib.toc-third:
+$processor$: toc
+
+- support/
+  Support
+- team/
+  Team
+
+
+-- lib.hero-action:
+title: Get Started
+url: /get-started/
+background-color: #25c19f
+text-color: white
+
+-- lib.hero-action:
+title: Playground
+url: /playground/
+background-color: #54c7ec
+text-color: white
 

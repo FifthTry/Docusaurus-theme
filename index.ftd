@@ -3,6 +3,10 @@
 
 -- lib.page:
 
+--- lib.hero: Build optimized websites quickly, focus on your content
+image: static/images/github-light.svg
+hero-action: $lib.hero-action
 
+--- lib.banner: Coming from Docusaurus v1? Check out our v1 to v2 migration guide.
 
 
