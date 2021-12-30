@@ -1,0 +1,142 @@
+-- import: config
+-- import: data
+
+-- boolean dark-mode: true
+-- boolean mobile: false
+
+-- string neutral: #fff
+-- string neutral-200: #ced2dd
+-- string neutral-300: #F9F9F9
+-- string neutral-400: #E1E1E1
+-- string neutral-500: #323546
+-- string neutral-600: #3E4155
+-- string neutral-700: #1C1C24
+-- string neutral-800: #000
+
+
+-- ftd.text site-link:
+caption title:
+string link:
+size: 16
+style: semi-bold
+font: apple-system
+color: black
+text: $title
+link: $link
+line-height: 22
+position: center
+
+-- ftd.text header-link:
+caption title:
+string link:
+size: 16
+font: apple-system
+color: black
+text: $title
+link: $link
+line-height: 22
+position: center
+
+
+-- ftd.column h0:
+caption title:
+optional body body:
+width: fill
+padding-horizontal: 90
+
+--- ftd.text:
+text: $title
+size: 40
+color: black
+style: bold
+padding-bottom: 24
+font: apple-system
+
+--- markdown:
+if: $body is not null
+body: $body
+
+-- ftd.text markdown:
+body body:
+optional boolean collapsed:
+optional caption title:
+optional boolean two_columns:
+text: $body
+size: 19
+line-height: 30
+color: #4d4d4d
+padding-bottom: 34
+font: apple-system
+
+
+-- ftd.row header:
+width: fill
+background-color: white
+padding-horizontal: 20
+padding-vertical: 10
+border-bottom: 1
+border-color: #e1e1e1
+
+--- ftd.row: asdads
+position: left
+spacing: 25
+id: left-side
+
+--- ftd.row:
+spacing: 10
+
+--- ftd.image:
+src: https://res.cloudinary.com/dphj6havg/image/upload/v1640848703/docusaurus_keytar_rczbk2.svg
+height: 32
+width: auto
+
+--- site-link: $config.site-name
+link: /
+
+--- container: left-side
+
+
+--- header-link: $obj.title
+$loop$: $config.header-toc as $obj
+link: $obj.url
+
+
+--- container: ftd.main
+
+--- ftd.row:
+position: right
+spacing: 30
+width: auto
+
+--- ftd.image:
+src: static/images/github-dark.svg
+width: 20
+min-width: 20
+link: $data.github
+
+--- ftd.image:
+src: static/images/dark-mode.svg
+height: 18
+$event-click$: toggle $dark-mode
+
+
+-- ftd.row footer:
+width: fill
+height: 200
+background-color: $neutral-300
+
+
+-- ftd.column page:
+width: fill
+background-color: $neutral
+open: content-container
+
+--- header:
+
+--- ftd.column:
+id:  content-container
+
+--- container: ftd.main
+
+--- footer:
+
