@@ -1,7 +1,7 @@
 -- import: lib
 
--- lib.site-name: Docusaurus
--- lib.site-icon: https://res.cloudinary.com/dphj6havg/image/upload/v1640848703/docusaurus_keytar_rczbk2.svg
+-- lib.site-name: FifthTry
+-- lib.site-icon: static/images/logo.svg
 -- lib.github: https://github.com/FifthTry/Docusaurus-theme
 
 

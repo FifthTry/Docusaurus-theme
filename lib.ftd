@@ -210,7 +210,7 @@ id: left-side
 spacing: 10
 
 --- ftd.image:
-src: https://res.cloudinary.com/dphj6havg/image/upload/v1640848703/docusaurus_keytar_rczbk2.svg
+src: $site-icon
 height: 32
 width: auto
 
