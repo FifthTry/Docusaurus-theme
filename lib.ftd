@@ -23,19 +23,6 @@ string url:
 toc-item list children:
 
 -- toc-item list header-toc:
--- toc-item list toc-first:
--- toc-item list toc-second:
--- toc-item list toc-third:
-
-
-
--- record action-item:
-string title:
-string url:
-string background-color:
-string text-color:
-
--- action-item list hero-action:
 
 
 -- ftd.column page:
@@ -53,7 +40,8 @@ id:  content-container
 --- footer:
 
 
--- ftd.column doc-first:
+-- ftd.column doc-page:
+toc-item list toc:
 width: fill
 open: main-container
 background-color: $neutral
@@ -65,63 +53,7 @@ width: fill
 id: main-row
 
 --- render-toc:
-toc-obj: $toc-first
-
---- container: main-row
-
---- ftd.column:
-id: main-container
-max-width: 800
-align: top
-padding-horizontal: 20
-padding-vertical: 20
-
---- container: ftd.main
-
---- footer:
-
-
--- ftd.column doc-second:
-width: fill
-open: main-container
-background-color: $neutral
-
---- header:
-
---- ftd.row:
-width: fill
-id: main-row
-
---- render-toc:
-toc-obj: $toc-second
-
---- container: main-row
-
---- ftd.column:
-id: main-container
-max-width: 800
-align: top
-padding-horizontal: 20
-padding-vertical: 20
-
---- container: ftd.main
-
---- footer:
-
-
--- ftd.column doc-third:
-width: fill
-open: main-container
-background-color: $neutral
-
---- header:
-
---- ftd.row:
-width: fill
-id: main-row
-
---- render-toc:
-toc-obj: $toc-third
+toc-obj: $toc
 
 --- container: main-row
 
@@ -256,12 +188,12 @@ background-color: $neutral-300
 -- ftd.column hero:
 caption title:
 string image:
-action-item list hero-action:
 width: fill
 background-color: #2b3136
 padding-horizontal: $content-padding
 padding-vertical: 50
 spacing: 40
+open: action-container
 
 --- ftd.row:
 width: fill
@@ -285,12 +217,17 @@ position: right
 
 --- ftd.row:
 spacing: 40
+id: action-container
 
---- ftd.text:  $obj.title
-$loop$: $hero-action as $obj
-link: $obj.url
-background-color: $obj.background-color
-color: $obj.text-color
+-- ftd.text action-button:
+caption title:
+string url:
+optional string color: white
+optional string background-color: #25c19f
+text: $title
+link: $url
+background-color: $background-color
+color: $color
 border-radius: 6
 padding-vertical: 15
 padding-horizontal: 40

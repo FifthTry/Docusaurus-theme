@@ -5,7 +5,16 @@
 
 -- lib.hero: Build optimized websites quickly, focus on your content
 image: static/images/github-light.svg
-hero-action: $lib.hero-action
+
+--- lib.action-button: Get Started
+url: /get-started/
+background-color: #25c19f
+color: white
+
+--- lib.action-button: Playground
+url: /playground/
+background-color: #54c7ec
+color: white
 
 -- lib.banner: ftd has some dynamic features, which an be used when using fpm-repo.
 

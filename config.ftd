@@ -4,6 +4,9 @@
 -- lib.site-icon: static/images/logo.svg
 -- lib.github: https://github.com/FifthTry/Docusaurus-theme
 
+-- lib.toc-item list doc-toc:
+-- lib.toc-item list api-toc:
+-- lib.toc-item list community-toc:
 
 -- lib.header-toc:
 $processor$: toc
@@ -15,7 +18,7 @@ $processor$: toc
 - community/
   Community
 
--- lib.toc-first:
+-- doc-toc:
 $processor$: toc
 
 - introduction/
@@ -24,7 +27,7 @@ $processor$: toc
   Getting Started
 
 
--- lib.toc-second:
+-- api-toc:
 $processor$: toc
 
 - cli/
@@ -32,24 +35,11 @@ $processor$: toc
 - client-api/
   Client API
 
--- lib.toc-third:
+-- community-toc:
 $processor$: toc
 
 - support/
   Support
 - team/
   Team
-
-
--- lib.hero-action:
-title: Get Started
-url: /get-started/
-background-color: #25c19f
-text-color: white
-
--- lib.hero-action:
-title: Playground
-url: /playground/
-background-color: #54c7ec
-text-color: white
 

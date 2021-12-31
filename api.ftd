@@ -1,7 +1,8 @@
 -- import: config
 -- import: lib
 
--- lib.doc-second:
+-- lib.doc-page:
+toc: $config.api-toc
 
 -- lib.h1: API DOC
 

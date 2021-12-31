@@ -1,7 +1,8 @@
 -- import: config
 -- import: lib
 
--- lib.doc-first:
+-- lib.doc-page:
+toc: $config.doc-toc
 
 --- lib.h1: Introduction
 

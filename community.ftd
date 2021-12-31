@@ -1,7 +1,9 @@
 -- import: config
 -- import: lib
 
--- lib.doc-third:
+-- lib.doc-page:
+toc: $config.community-toc
+
 
 -- lib.h1: Support
 
