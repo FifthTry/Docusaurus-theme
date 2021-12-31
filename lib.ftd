@@ -574,21 +574,79 @@ border-top-radius: 4
 overflow-x: auto
 
 
+-- ftd.row feature-row:
+width: fill
+padding-horizontal: $content-padding
+spacing: space-between
+wrap: true
+padding-bottom: 60
+
+
 -- ftd.column feature:
 caption title:
 string image:
 body body:
 width: percent 30
-spacing: 20
+spacing: 15
+padding-top: 60
 
 --- ftd.image:
 src: $image
-width: percent 80
+width: percent 60
 position: top
 
 --- ftd.text: $title
-width: percent 80
+width: fill
 size: 22
+font: apple-system
+width: fill
+text-align: center
+style: bold
+
+--- ftd.text:
+text: $body
+width: fill
+size: 15
+line-height: 26
+font: apple-system
+width: fill
+text-align: center
+
+
+-- ftd.row testimony-row:
+width: fill
+padding-horizontal: $content-padding
+spacing: space-between
+wrap: true
+padding-bottom: 60
+background-color: #f5f6f7
+
+-- ftd.column testimony:
+caption title:
+string image:
+string designation:
+body body:
+width: percent 30
+spacing: 15
+padding-top: 60
+
+--- ftd.image:
+src: $image
+width: percent 30
+border-radius: 1000
+position: top
+
+--- ftd.text: $title
+width: fill
+size: 20
+font: apple-system
+width: fill
+text-align: center
+style: bold
+
+--- ftd.text: $designation
+width: fill
+size: 14
 font: apple-system
 width: fill
 text-align: center
@@ -597,6 +655,7 @@ text-align: center
 text: $body
 width: fill
 size: 15
+line-height: 26
 font: apple-system
 width: fill
 text-align: center
