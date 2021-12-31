@@ -3,12 +3,24 @@
 -- lib.site-name: FifthTry
 -- lib.site-icon: static/images/logo.svg
 -- lib.github: https://github.com/FifthTry/Docusaurus-theme
+-- lib.site-url: /Docusaurus-theme
+
 
 -- lib.toc-item list doc-toc:
 -- lib.toc-item list api-toc:
 -- lib.toc-item list community-toc:
 
 -- lib.header-toc:
+$processor$: toc
+
+- docs/
+  Docs
+- api/
+  API
+- community/
+  Community
+
+-- lib.toc:
 $processor$: toc
 
 - docs/
