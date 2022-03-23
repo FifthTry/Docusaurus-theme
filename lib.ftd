@@ -177,7 +177,7 @@ link: $github
 --- ftd.image:
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
 height: 18
-$on-click$: toggle $dark-mode
+$on-click$: toggle $ftd.dark-mode
 
 
 -- ftd.row footer:
